@@ -1,23 +1,19 @@
 const auth = require('../middleware/auth')
 const admin = require('../middleware/admin')
+const {Genre, validate} = require('../models/genre')
+const mongoose = require('mongoose')
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
-const {Genre, validate} = require('../models/genre')
 
-router.get('/', async (req, res, next) => {
-    try{
-        const genres = await Genre.find().sort({name: 1});
-        res.send(genres)
-    }
-    catch(ex) {
-        next(ex)
-    }   
+
+
+router.get('/', async (req, res) => {
+    throw new Error('cant get genre');
+    const genres = await Genre.find().sort({name: 1});
+    res.send(genres)
 })
 
 router.post('/', auth, async (req, res) => {  
-
- 
 
     const {error} = validate(req.body)
     if(error) return res.status(400).send('Validation failed: ' + error.details[0].message);
