@@ -57,7 +57,7 @@ rentalFee: {
     }));     
 
     function validateRental(rental) {
-        const schema = Joi.object ({
+        const schema = Joi.object({
             customerId: Joi.objectId().required(),
             movieId: Joi.objectId().required()
          });
