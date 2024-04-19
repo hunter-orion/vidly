@@ -1,5 +1,5 @@
 const winston = require('winston')
- require('winston-mongodb')
+//  require('winston-mongodb')
  require('express-async-errors')
 
 
@@ -20,5 +20,9 @@ winston.add(new winston.transports.File({ filename: "logfile.log",
         )
     }))
 
-winston.add(new winston.transports.MongoDB({ db: 'mongodb://localhost/Vidly', level: 'info', options: { useUnifiedTopology: true } } ))
+// winston.add(new winston.transports.MongoDB({
+//      db: 'mongodb://localhost/Vidly', 
+//      level: 'info', 
+//      options: { useUnifiedTopology: true }
+//      } ))
     }
