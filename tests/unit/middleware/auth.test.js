@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 describe('authMiddleware', () => {
     it('should populate req.user with valid jwt payload', () => {
         const user = { 
-            _id: mongoose.Types.ObjectId().toHexString(),
+            _id: new mongoose.Types.ObjectId().toHexString(),
              isAdmin: true
             };
         const token = new User(user).generateAuthToken();

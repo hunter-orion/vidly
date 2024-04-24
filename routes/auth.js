@@ -1,6 +1,8 @@
 
 const bcrypt = require('bcrypt')
 const _ = require('lodash')
+const validate = require('../middleware/validate')
+
 const { User} = require('../models/user')
 const express = require('express')
 const router = express.Router()
@@ -8,7 +10,7 @@ const mongoose = require('mongoose')
 const Joi = require('joi');
 
 router.post('/', async (req, res) => {
-    const {error} = validate(req.body)
+    const {error} = validateRequest(req.body)
     if(error) return res.status(400).send('Validation failed: ' + error.details[0].message);
 
     let user = await User.findOne({ email: req.body.email });
@@ -22,7 +24,7 @@ router.post('/', async (req, res) => {
    
 });
 
-function validate(req) {
+function validateRequest(req) {
     const schema = Joi.object({
         email: Joi.string().min(5).max(255).required().email(),
         password: Joi.string().min(5).max(255).required(),

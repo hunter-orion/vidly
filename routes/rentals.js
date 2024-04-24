@@ -1,7 +1,8 @@
 const auth = require('../middleware/auth')
-const { Rental, validate} = require('../models/rental')
+const { Rental, validateRental} = require('../models/rental')
 const {Movie} = require('../models/movie')
 const {Customer} = require('../models/customer')
+const validate = require('../middleware/validate')
 const express = require('express')
 const router = express.Router()
 
@@ -11,15 +12,14 @@ router.get('/', async (req, res) => {
     res.send(rentals)
 })
 
-    router.post('/', auth, async (req, res) => {
-        const { error } = validate(req.body); 
-        if (error) return res.status(400).send(error.details[0].message);
+    router.post('/', [auth, validate(validateRental)], async (req, res) => {
+
 
         const customer = await Customer.findById(req.body.customerId);
-        if (!customer) return res.status(400).send('Invalid customer.');
+        if (!customer) return res.status(400).send('Invalid Customer Id');
       
         const movie = await Movie.findById(req.body.movieId);
-        if (!movie) return res.status(400).send('Invalid movie.');
+        if (!movie) return res.status(400).send('Invalid movie Id.');
       
         if (movie.numberInStock === 0) return res.status(400).send('Movie not in stock.');
       
