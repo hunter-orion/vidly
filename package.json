@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --verbose --runInBand --coverage --detectOpenHandles"
+    "test": "jest --watch --verbose --runInBand --coverage --detectOpenHandles",
+    "start": "node index.js"
   },
+  "engines": {
+    "node":"20.11.0"},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "compression": "^1.7.4",
     "config": "^3.3.11",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
