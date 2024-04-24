@@ -3,7 +3,7 @@ const auth = require('../../../middleware/auth')
 const mongoose = require('mongoose')
 
 describe('authMiddleware', () => {
-    it('should populate req.user with valid jwt payload', () => {
+    it('should populate req.user with valid jwt payload yes', () => {
         const user = { 
             _id: new mongoose.Types.ObjectId().toHexString(),
              isAdmin: true
