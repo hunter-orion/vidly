@@ -3346,3 +3346,7 @@
 {"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-24T22:07:15.883Z"}
 {"level":"info","message":"on port 3000...","timestamp":"2024-04-24T22:33:43.688Z"}
 {"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-24T22:33:43.705Z"}
+{"level":"info","message":"on port 3000...","timestamp":"2024-04-25T02:05:58.495Z"}
+{"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-25T02:05:58.527Z"}
+{"level":"info","message":"on port 3000...","timestamp":"2024-04-25T02:06:31.283Z"}
+{"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-25T02:06:31.312Z"}
