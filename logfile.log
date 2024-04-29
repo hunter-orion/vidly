@@ -3350,3 +3350,5 @@
 {"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-25T02:05:58.527Z"}
 {"level":"info","message":"on port 3000...","timestamp":"2024-04-25T02:06:31.283Z"}
 {"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-25T02:06:31.312Z"}
+{"level":"info","message":"on port 3000...","timestamp":"2024-04-25T18:55:17.413Z"}
+{"level":"info","message":"connected to mongodb://localhost/Vidly","timestamp":"2024-04-25T18:55:17.453Z"}
