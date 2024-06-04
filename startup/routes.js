@@ -11,14 +11,13 @@ const error = require('../middleware/error')
 
 
 module.exports = function(app) {
-    const allowedOrigin = 'https://example.com'
 
   const corsOptions = {
-    origin: allowedOrigin,
+    origin: '*',
+    credentials: true,
   };
 
-  // app.use(cors(corsOptions)); when have defined origin
-  app.use(cors())
+  app.use(cors(corsOptions))
 app.use(express.json())
 app.use('/api/genres', genres)
 app.use('/api/customers', customers)
